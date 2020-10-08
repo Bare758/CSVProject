@@ -9,7 +9,7 @@ public class testCSVMain {
 		UserInterface ui = new UserInterface();
 
 		readCSV.getWholeSheet();
-		readCSV.printCSV();
+		//readCSV.printCSV();
 		SwingUtilities.invokeLater(ui);
 
 	}

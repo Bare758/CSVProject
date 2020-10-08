@@ -43,7 +43,7 @@ public class readCSV {
 		for (int i = 0; i < wholeSheet.size(); i++) {
 			// loops through values
 			List<String> localValues = wholeSheet.get(i);
-			System.out.println(localValues.size());
+			//System.out.println(localValues.size());
 		}
 
 	}
@@ -86,7 +86,7 @@ public class readCSV {
 	public static void printCSV() {
 		for (ArrayList<String> row : wholeSheet) {
 
-			System.out.println(row);
+			//System.out.println(row);
 
 		}
 
