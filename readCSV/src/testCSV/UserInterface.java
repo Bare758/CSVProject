@@ -2,6 +2,7 @@ package testCSV;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -23,10 +24,10 @@ public class UserInterface implements Runnable {
 
 		frame.setVisible(false);
 
-		int colNum = readCSV.getWholeSheet().get(0).size();
-		System.out.println(readCSV.getWholeSheet());
-
+		int colNum = myWholeSheet.get(0).size();
+		
 		String[][] myArray = new String[myWholeSheet.toArray().length][colNum];
+	
 		for (int x = 0; x < colNum; x++) {
 			String names = "";
 			names = myWholeSheet.get(0).get(x);
@@ -35,6 +36,7 @@ public class UserInterface implements Runnable {
 		for (int i = 1; i < myWholeSheet.toArray().length; i++) {
 			ArrayList<String> row = new ArrayList<>();
 			row = myWholeSheet.get(i);
+			System.out.println(row);
 			myArray[i - 1] = row.toArray(new String[colNum]);
 		}
 
@@ -51,7 +53,5 @@ public class UserInterface implements Runnable {
 
 	}
 
-	public void createTable(ArrayList<ArrayList<String>> sheet) {
-
-	}
+	
 }

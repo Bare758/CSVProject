@@ -10,6 +10,7 @@ public class readCSV {
 
 	private static String COMMA_DELIMITER = ",";
 	private static ArrayList<ArrayList<String>> wholeSheet = new ArrayList<>();
+	static List<String> localValues;
 	static String myString = "";
 	static String container = "";
 	static boolean recieve = false;
@@ -29,7 +30,7 @@ public class readCSV {
 
 		try (Scanner scanner = new Scanner(new File("sample.csv"));) {
 			while (scanner.hasNext()) {
-
+				//System.out.println(scanner.hasNext());
 				wholeSheet.add(getRows(scanner.nextLine()));
 
 			}
@@ -42,7 +43,7 @@ public class readCSV {
 		}
 		for (int i = 0; i < wholeSheet.size(); i++) {
 			// loops through values
-			List<String> localValues = wholeSheet.get(i);
+			 localValues= wholeSheet.get(i);
 			//System.out.println(localValues.size());
 		}
 
@@ -79,15 +80,6 @@ public class readCSV {
 			}
 
 			return rowValues;
-		}
-
-	}
-
-	public static void printCSV() {
-		for (ArrayList<String> row : wholeSheet) {
-
-			//System.out.println(row);
-
 		}
 
 	}
