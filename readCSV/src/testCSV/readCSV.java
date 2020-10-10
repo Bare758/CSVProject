@@ -13,7 +13,7 @@ public class readCSV {
 	static List<String> localValues;
 	static String myString = "";
 	static String container = "";
-	static boolean recieve = false;
+	static boolean receive = false;
 
 	public static ArrayList<ArrayList<String>> getWholeSheet() {
 
@@ -30,7 +30,7 @@ public class readCSV {
 
 		try (Scanner scanner = new Scanner(new File("sample.csv"));) {
 			while (scanner.hasNext()) {
-				//System.out.println(scanner.hasNext());
+
 				wholeSheet.add(getRows(scanner.nextLine()));
 
 			}
@@ -43,8 +43,8 @@ public class readCSV {
 		}
 		for (int i = 0; i < wholeSheet.size(); i++) {
 			// loops through values
-			 localValues= wholeSheet.get(i);
-			//System.out.println(localValues.size());
+			localValues = wholeSheet.get(i);
+			
 		}
 
 	}
@@ -62,19 +62,19 @@ public class readCSV {
 				container += myString;
 				if (!myString.isEmpty()) {
 					if (myString.charAt(0) == '"') {
-						recieve = true;
+						receive = true;
 						continue;
 					}
 				}
 				if (!container.isEmpty()) {
 					if (container.charAt((container.length() - 1)) == '"') {
-						recieve = false;
+						receive = false;
 					}
 				}
 
 				rowValues.add(container);
 
-				if (!recieve) {
+				if (!receive) {
 					container = "";
 				}
 			}

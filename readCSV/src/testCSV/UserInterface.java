@@ -2,8 +2,6 @@ package testCSV;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
