@@ -3,14 +3,13 @@ package testCSV;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class readCSV {
 
 	private static String COMMA_DELIMITER = ",";
 	private static ArrayList<ArrayList<String>> wholeSheet = new ArrayList<>();
-	static List<String> localValues;
+	//static List<String> localValues;
 	static String myString = "";
 	static String container = "";
 	static boolean receive = false;
@@ -41,11 +40,11 @@ public class readCSV {
 			e.printStackTrace();
 
 		}
-		for (int i = 0; i < wholeSheet.size(); i++) {
-			// loops through values
-			localValues = wholeSheet.get(i);
-			
-		}
+//		for (int i = 0; i < wholeSheet.size(); i++) {
+//			// loops through values
+//			localValues = wholeSheet.get(i);
+//			// System.out.println(localValues.size());
+//		}
 
 	}
 
