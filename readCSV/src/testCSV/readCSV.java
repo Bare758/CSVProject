@@ -3,16 +3,16 @@ package testCSV;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class readCSV {
 
 	private static String COMMA_DELIMITER = ",";
 	private static ArrayList<ArrayList<String>> wholeSheet = new ArrayList<>();
+	//static List<String> localValues;
 	static String myString = "";
 	static String container = "";
-	static boolean recieve = false;
+	static boolean receive = false;
 
 	public static ArrayList<ArrayList<String>> getWholeSheet() {
 
@@ -40,11 +40,11 @@ public class readCSV {
 			e.printStackTrace();
 
 		}
-		for (int i = 0; i < wholeSheet.size(); i++) {
-			// loops through values
-			List<String> localValues = wholeSheet.get(i);
-			System.out.println(localValues.size());
-		}
+//		for (int i = 0; i < wholeSheet.size(); i++) {
+//			// loops through values
+//			localValues = wholeSheet.get(i);
+//			// System.out.println(localValues.size());
+//		}
 
 	}
 
@@ -61,33 +61,24 @@ public class readCSV {
 				container += myString;
 				if (!myString.isEmpty()) {
 					if (myString.charAt(0) == '"') {
-						recieve = true;
+						receive = true;
 						continue;
 					}
 				}
 				if (!container.isEmpty()) {
 					if (container.charAt((container.length() - 1)) == '"') {
-						recieve = false;
+						receive = false;
 					}
 				}
 
 				rowValues.add(container);
 
-				if (!recieve) {
+				if (!receive) {
 					container = "";
 				}
 			}
 
 			return rowValues;
-		}
-
-	}
-
-	public static void printCSV() {
-		for (ArrayList<String> row : wholeSheet) {
-
-			System.out.println(row);
-
 		}
 
 	}
